@@ -3,6 +3,8 @@
       Created by Patrick Mauro  
 ======================================
 
+An implementation of the Web Audio API that takes one of four stereo audio sources I have provided and processes it to revolve the two points of sound around the y axis in a circular fashion at a constant rate, creating a simulated representation of 3-dimensional sound.
+
 This is one of my first more involved coding projects after having been away from it for a few years. The object of this project was essentially to teach me the basics of the Web Audio API. Since I was learning as I went along, needless to say development was a little bumpy - but I'm extremely pleased with the end results.
 
 I realized early on that, without access to a reliable web server, I wouldn't be able to ensure audio was loading properly. As an alternative, I researched and implemented a system where audio buffers from a 64-bit string representation of an audio file rather than the file itself, using the "base64-binary.js" library created by Daniel Guerrero.
