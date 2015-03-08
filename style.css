@@ -1,0 +1,275 @@
+/*================
+GENERAL PAGE RULES
+================*/
+
+body{
+    background-color:#5C5C5C;
+    font-family: 'Open Sans', "Helvetica Neue", "Neue Helvetica", Arial, sans-serif;
+    font-weight:light;
+    color:#FEFEFE;
+    text-align:center;
+    min-width: 53em;
+}
+
+#header{
+    font-family: 'Montserrat', "Helvetica Neue", "Neue Helvetica", Helvetica, sans-serif;
+    font-size: 1.2em;
+    padding-top:0.25em;
+    padding-bottom:0.25em;
+    background-color: #222;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    color:#00C790;
+    min-width: 45em;
+
+}
+
+#interface{
+    text-align: left;
+    background-color: #09544D;
+    margin-top:12em;
+    padding: 1.25em;
+    padding-right:0;
+    padding-bottom:0;
+    width:31em;
+    margin-left:auto;
+    margin-right:auto;
+    font-weight: bolder;
+    color: #FFF;
+
+}
+
+#non-ui{
+    background-color:#222;
+    padding: 1.25em;
+    /*Compensates for difference in em values*/
+    padding-right:0.4em;
+    display:block;
+    text-align: left;
+    font-weight: lighter;
+    font-size:0.75em;
+    margin-left:-1.65em;
+    /*margin-left:-1.25em;*/
+    color:#00C790;
+    width:100%;
+}
+
+#desc{
+    color:#222;
+}
+
+footer{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #222;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: light;
+    color:#00C790;
+    font-size:0.8em;
+    min-width: 67em;
+}
+
+
+
+/*=============
+CUSTOM UI RULES
+=============*/
+
+/* SELECTION MENU */
+select {
+    cursor: pointer; 
+    border:none;
+    border-radius: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:light;
+    background:#222;
+    height:2.4em;
+    width: 12em;
+    color:#00C790;
+    -webkit-appearance:none;
+    padding-left:0.45em;
+}
+
+/* BUTTONS */
+
+button {
+    cursor: pointer;  
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:light;
+    background:#222;
+    height:2.4em;
+    color:#00C790;
+}
+
+/* CHECKBOXES & RADIO BUTTONS */
+
+label {  
+    display: inline-block;   
+    position: relative;
+    padding-left: 1.5em;
+    margin-right: 1em;  
+}
+
+label:before {  
+    content: "";  
+    display: inline-block;  
+    width: 0.5em;  
+    height: 0.5em;
+    position: absolute;  
+    left: 0;  
+    margin-top:0.1em;
+    background-color: #222;
+    border: 0.3em solid #222;
+    cursor: pointer;   
+}
+
+.radio label:before {  
+    border-radius: 1em;
+}
+
+input[type=radio]:checked + label:before {  
+    content: "";  
+    display: inline-block;  
+    width: 0.5em;  
+    height: 0.5em;
+    position: absolute;  
+    left: 0;  
+    background-color: #00C790;
+    border: 0.3em solid #222;  
+    border-radius: 1em;
+
+}  
+
+input[type=radio] {  
+    display: none;
+}
+
+input[type=checkbox] {  
+    display: none;  
+}
+
+.checkbox label:before {  
+  border-radius:0;
+}
+
+input[type=checkbox]:checked + label:before {  
+    content: "";  
+    display: inline-block;  
+    width: 0.5em;  
+    height: 0.5em;
+    position: absolute;  
+    left: 0;  
+    background-color: #00C790;
+    border: 0.3em solid #222;  
+    border-radius:0;
+}
+
+/* INPUT RANGE (AKA SLIDERS) */
+
+#sliders {
+  margin: 0.75em 0;
+}
+
+
+input[type=range] {
+  -webkit-appearance: none;
+/* Needed to make FF Cooperate */
+  width: 9.5em;
+  -webkit-margin: 0.75em 0;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height:0.6em;
+  animate: 0.2s;
+  background: #222;
+  border:none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 2.4em;
+  width: 1em;
+  border:none;
+  border-radius: 0;
+  background: #5C5C5C;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -0.9em;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #222;
+}
+
+input[type=range]::-moz-range-track {
+  height: 0.75em;
+
+  animate: 0.2s;
+  background: #222;
+  border: none;
+  border-radius: 0;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 2.5em;
+  width: 1em;
+  border-radius: 0;
+  background: #5C5C5C;
+  cursor: pointer;
+}
+
+
+/*  IE is still not standards-compliant,
+    So we actually don't care as much. */
+
+input[type=range]::-ms-track {
+  width: 100%;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  /*border-width: 16pixels 0;*/
+  border-width: 0.25em 0;
+  color: transparent;
+  /*border-radius: 1.3pixels;*/
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #222;
+  /*border-radius: 2.6pixels;*/
+  border: none;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #222;
+  /*border-radius: 2.6pixels;*/
+  border: none;
+}
+
+input[type=range]::-ms-thumb {
+  height: 2.5em;
+  width: 1em;
+  border:none;
+  border-radius: 0;
+  background: #5C5C5C;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #00C790;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #00C790;
+}

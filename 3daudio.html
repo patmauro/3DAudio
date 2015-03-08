@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+
+<!-- Loads in custom Google Fonts -->
+<script src="webfonts.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+
+<!-- Custom Favicon -->
+<link rel="icon" type="image/ico" href="favicon.ico" />
+
+<!-- Loads Daniel Guerrero's "Base64Binary," a library to decode 64bit Strings as audio data -->
+<script type="text/javascript" src="base64-binary.js"></script>
+
+<!-- Loads 4 original audio files encoded as 64-bit strings -->
+<script type="text/javascript" src="audio-data.js"></script>
+
+<!-- Script handling the bulk of our audio processessing -->
+<script type="text/javascript" src="audio-buffer-playback.js"></script>
+
+<!-- Loads Chris Wilson's "Audio Context Monkey," a library that "downgrades"
+	our Web Audio code for standards-noncompliant browsers (namely Safari) -->
+<script src ="http://cwilso.github.com/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
+
+<title>3D Audio Simulation with Web Audio</title>
+</head>
+
+<body>
+
+<div id="header">
+<h1>3D Audio Simulation with Web Audio</h1>
+<p>Rotating Binaural Audio from Single Stereo Source</p>
+</div>
+
+<div id="interface">
+Sound File:&nbsp;
+<select id="trackList">
+<option value="channelTest" selected>Spoken Channel Test</option>
+<option value="pianoChime">Piano Chime</option>
+<option value="dualSpires">Walking Bass</option>
+<option value="glassWoodTap">Glass &amp; Wood Noises</option>
+</select>
+
+&nbsp;&nbsp;
+<button id="playButton">Play</button>
+<button id="stopButton">Stop</button>
+&nbsp;
+<span class="checkbox" display="inline">
+<input id="loopOption" type="checkbox" checked><label for="loopOption">&nbsp;Loop</label>
+</span>
+
+<br>
+<div id = "sliders">
+Volume:
+<input id="volumeBar" type="range" min="0" max="1" step="0.1" value="1"  />
+&nbsp;Manual Pan:
+<input id="panBar" type="range" min="-1" max="1" step="0.1" value="0"  />
+</div>
+
+<span class="radio">
+<form>
+<input type="radio" name="panOpt" id="manPanOpt" value="manPan"><label for="manPanOpt">Manual Pan</label>
+<input type="radio" name="panOpt" id="autoPanOpt" value="autoPan" checked><label for="autoPanOpt">Auto Pan</label>
+</form></span>
+<br>
+
+<div id="non-ui">
+Auto Pan Angle (Degrees):
+<span id="timerSpace"></span>
+<br>Right Channel X-Coordinate:
+<span id="xCoordR"></span>
+<br>Left Channel X-Coordinate:
+<span id="xCoordL"></span>
+<br>Anchored Z-Coordinate:
+<span id="zCoord"></span>
+</div>
+
+</div>
+
+<div id="desc">
+<p>
+<i>The sounds I've prepared have unique aspects
+<br>differentiating each stereo audio channel.
+<br>Listen closely to how panning affects this!</i>
+</p>
+</div>
+
+<!-- Loads all initializations/listeners/etc -->
+<script type="text/javascript" src="inits.js"></script>
+
+<script>
+// Checks to see if browser doesn't support Web Audio
+// (specifically IE)
+if(soundFile==null){
+	document.getElementById('non-ui').innerHTML = "<font color='red' size='3'><b>Your browser does not support the Web Audio API.</b><br>The program will not run.</font>";
+}
+if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1){
+	document.getElementById('non-ui').innerHTML += 
+	"<br><br><font color='red'><font size='3'><b>Safari detected<br></b></font>Due to standards-noncompliance, only the first selection will play.</font>";
+
+}
+</script>
+
+<footer>
+&copy;2015 Patrick Mauro
+</footer>
+
+</body>
+</html>
