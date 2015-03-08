@@ -15,14 +15,14 @@ I also rely on the library "AudioContextMonkey" by Chris Wilson, which "downgrad
 
 Aside from the libraries I imported, this project is, for the most part, completely original - the code is mostly scratch, all four sound files are original audio I recorded, and the design I drafted and then implemented on my own as well; including the favicon. It's been exciting being able to work on a coding project like this again, and I hope to work on more like this soon.
 
-	3/6/15 - 	Completed Project
-	3/7/15 - 	Updated to fix UI bugs, and better adapt to other browsers and operating systems.
-				-	Cleaned UI
-				-	Switched all "px" to relevant "em"
-				-	Project now displays stably on Chrome, Firefox, Safari and IE
-				-	Switched Google Fonts call to javascript, fixing font issues
-				-	Project now runs on Safari albeit with a limitation due to standards noncompliance
-				-	Error message thrown for IE indicating standards noncompliance
+3/6/15 - Completed Project
+3/7/15 - Improvements and bugfixes
+		- Cleaned UI
+		- Switched all "px" to relevant "em"
+		- Project now displays stably on Chrome, Firefox, Safari and IE
+		- Switched Google Fonts call to javascript, fixing font issues
+		- Project now runs on Safari albeit with a limitation due to standards noncompliance
+		- Error message thrown for IE indicating standards noncompliance
 
 
 Patrick Mauro
