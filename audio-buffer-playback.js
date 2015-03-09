@@ -53,8 +53,8 @@ function startSpin(){
 	setInterval(function(){
 		//Checks to see if posAngle>=2PI, if so, resets to 0
 		posnCheck();
-		//Increases the value of posAngle by 0.025
-		posAngle+=0.025;
+		//Increases the value of posAngle by (pi/125)
+		posAngle+=(Math.PI*0.008);
 		//Prints current angle in degrees (rounded) to the HTML id "timerSpace"
 		document.getElementById('timerSpace').innerHTML = Math.floor(180*(posAngle/Math.PI));
 		//Generates our X and Z coordinates based on the current angle
