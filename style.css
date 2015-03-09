@@ -11,7 +11,7 @@ body{
     min-width: 53em;
 }
 
-#header{
+header{
     font-family: 'Montserrat', "Helvetica Neue", "Neue Helvetica", Helvetica, sans-serif;
     font-size: 1.2em;
     padding-top:0.25em;

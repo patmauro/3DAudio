@@ -134,3 +134,22 @@ function trackChange(track) {
 	//Resets the buffer with new audio source
 	fetchSound();
 }
+
+/*===========
+BROWSER CHECK 
+===========*/
+// Throws an error/warning if a known problematic browser is being used.
+function browserCheck(){
+/*	Checks to see if values that should have been initialized already
+	failed to initialize; indicated a browser with no Web Audio API support
+	(Such as IE at the time of this writing.)	*/
+	if(soundFile==null){
+		document.getElementById('non-ui').innerHTML = "<font color='red' size='3'><b>Your browser does not support the Web Audio API.</b><br>The program will not run.</font>";
+	}
+/*	Otherwise, checks to see if user agent is Safari,
+	Which is not 100% standards-compliant, and thus has a bug.	*/
+	else if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1){
+		document.getElementById('non-ui').innerHTML += 
+		"<br><br><font color='red'><font size='3'><b>Safari detected<br></b></font>Due to standards-noncompliance, only the first selection will play.</font>";
+	}
+}
